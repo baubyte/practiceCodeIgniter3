@@ -7,12 +7,15 @@ class Registro extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper(['getmenu']);
+		$this->load->database();
 	}
 
 	public function index()
 	{
 		$data['menus'] = mainMenu();
 		$this->load->view('registro',$data);
+		$query = $this->db->get('usuarios');
+		var_dump($query->result());
 	}
 
 	public function create()
