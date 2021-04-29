@@ -1,2 +1,2 @@
-# practiceCodeIgniter4
-Probando CodeIgniter 3
+# Practica CodeIgniter 3
+
