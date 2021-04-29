@@ -11,13 +11,55 @@
 	<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css" rel="stylesheet" />
 </head>
 
-<body>
-	<h1>Registro</h1>
+<body class="container-fluid">
+    <!-- Titulo de Pagina -->
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1>Registro</h1>
+        </div>
+    </div>
+	<div class="row">
+	<div class="col-md-3">
 	<ul>
 		<?php foreach($menus as $menu): ?>
 			<li><a href="<?=$menu['url']?>"><?=$menu['title']?></a></li>
 		<?php endforeach;?>
 	</ul>
+	</div>
+	<div class="col-md-6">
+		<?php echo form_open('registro/create',['method' => 'post']);?>
+		<div class="form-group">
+		<?php	echo form_label('Nombre de Usuario'); ?>
+		</div>
+		<div class="form-group">
+		<?php echo form_input('username'); ?>
+		</div>
+		<div class="form-group">
+		<?php	echo form_label('Email'); ?>
+		</div>
+		<div class="form-group">
+		<?php	echo form_input(['type' => 'email', 'name' => 'email']);?>
+		</div>
+		<div class="form-group">
+		<?php	echo form_label('Contraseña'); ?>
+		</div>
+		<div class="form-group">
+		<?php	echo form_password('password');?>
+		</div>
+		<div class="form-group">
+		<?php	echo form_label('Confirmar Contraseña'); ?>
+		</div>
+		<div class="form-group">
+		<?php	echo form_password('cpassword');?>
+		</div>
+		<div class="form-group">
+		<?php	echo form_submit('submit','Registrarme','class = "btn btn-success"');?>
+		</div>
+		<?php echo form_close();?>
+	</div>
+	<div class="col-md-3">
+	</div>
+	</div>
 	<!-- JQuery -->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 	<!-- Bootstrap -->
