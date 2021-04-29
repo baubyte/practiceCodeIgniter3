@@ -35,6 +35,7 @@ RUN docker-php-ext-install \
     mbstring \
     opcache \
     pdo_mysql \
+    mysqli \
     zip
 
 # Obtener la ultima version de Composer
