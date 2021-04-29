@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
+	'hostname' => 'codeigniter-db',
+	'username' => 'root',
+	'password' => 'admin.root',
 	'database' => '',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
