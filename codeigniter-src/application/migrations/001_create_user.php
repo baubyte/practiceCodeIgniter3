@@ -35,7 +35,7 @@ class Migration_create_user extends CI_Migration {
 						'constraint' => '1',
 						'null' => FALSE,
 					),
-					'rango' => array(
+					'range' => array(
 						'type' => 'TINYINT',
 						'constraint' => '1',
 						'null' => TRUE,
