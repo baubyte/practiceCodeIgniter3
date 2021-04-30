@@ -27,6 +27,13 @@
 	</ul>
 	</div>
 	<div class="col-md-6">
+	<?php if (isset($msg)):?>
+		<div class="alert alert-success" role="alert">
+		  <h4 class="alert-heading"></h4>
+		  <p><?=$msg?></p>
+		  <p class="mb-0"></p>
+		</div>
+	<?php endif;?>
 		<?php echo form_open('registro/create',['method' => 'post']);?>
 		<div class="form-group">
 		<?php	echo form_label('Nombre de Usuario'); ?>
