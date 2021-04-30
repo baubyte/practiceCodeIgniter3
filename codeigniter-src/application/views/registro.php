@@ -34,6 +34,7 @@
 		  <p class="mb-0"></p>
 		</div>
 	<?php endif;?>
+	<?php echo validation_errors(); ?>
 		<?php echo form_open('registro/create',['method' => 'post']);?>
 		<div class="form-group">
 		<?php	echo form_label('Nombre de Usuario'); ?>
