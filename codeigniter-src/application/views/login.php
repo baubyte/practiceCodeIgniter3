@@ -12,12 +12,33 @@
 </head>
 
 <body>
-	<h1>Login</h1>
-	<ul>
-		<?php foreach($menus as $menu): ?>
-			<li><a href="<?=$menu['url']?>"><?=$menu['title']?></a></li>
-		<?php endforeach;?>
-	</ul>
+
+<div class="row">
+<div class="col-md-6 mx-auto">
+  <div class="card card-body mt-5">
+     <h3>Iniciar Sesión</h3>
+     <p>Ingrese su Usuario y Contraseña</p>
+     <form action="<?= base_url('/login/signin')?>" method="post">
+        <div class="form-group">
+           <label for="name">Email: <sup>*</sup></label>
+           <input type="email" name="email" class="form-control">
+		   <span class="invalid-feedback"></span>
+        </div>
+        <div class="form-group">
+           <label for="name">Contraseña: <sup>*</sup></label>
+           <input type="password" name="password" class="form-control">
+        </div>
+        <div class="row">
+           <div class="col">
+              <input type="submit" value="Iniciar Sesión" class="btn btn-success btn-block"/>
+           </div>
+           <div class="col">
+              <a href="" class="btn btn-light btn-block">Registrarse</a>
+           </div>
+        </div>
+     </form>
+  </div>
+</div>
 	<!-- JQuery -->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 	<!-- Bootstrap -->
