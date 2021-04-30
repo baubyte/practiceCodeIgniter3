@@ -22,7 +22,8 @@
         <div class="form-group">
            <label for="name">Email: <sup>*</sup></label>
            <input type="email" name="email" class="form-control">
-		   <span class="invalid-feedback"></span>
+		   <span class="invalid-feedback">
+			</span>
         </div>
         <div class="form-group">
            <label for="name">Contraseña: <sup>*</sup></label>
@@ -43,6 +44,8 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 	<!-- Bootstrap -->
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+	<!-- Scripts -->
+	<script src="<?=base_url('assets/js/auth/login.js')?>"></script>
 </body>
 
 </html>
