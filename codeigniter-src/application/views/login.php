@@ -18,16 +18,18 @@
   <div class="card card-body mt-5">
      <h3>Iniciar Sesión</h3>
      <p>Ingrese su Usuario y Contraseña</p>
-     <form action="<?= base_url('/login/signin')?>" method="post">
-        <div class="form-group">
+     <form action="<?= base_url('/login/signin')?>" method="post"  id="form-login">
+        <div class="form-group" id="email">
            <label for="name">Email: <sup>*</sup></label>
            <input type="email" name="email" class="form-control">
 		   <span class="invalid-feedback">
 			</span>
         </div>
-        <div class="form-group">
+        <div class="form-group" id="password">
            <label for="name">Contraseña: <sup>*</sup></label>
            <input type="password" name="password" class="form-control">
+			  <span class="invalid-feedback">
+			</span>
         </div>
         <div class="row">
            <div class="col">
@@ -41,7 +43,7 @@
   </div>
 </div>
 	<!-- JQuery -->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<!-- Bootstrap -->
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 	<!-- Scripts -->
