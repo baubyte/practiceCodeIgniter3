@@ -8,7 +8,7 @@ class Login extends CI_Controller {
 		parent::__construct();
 		$this->load->model('User');
 		$this->load->model('Auth');
-		$this->load->library('form_validation');
+		$this->load->library(array('form_validation','session'));
 		$this->load->helper(['auth/login_rules']);
 	}
 	public function index()
@@ -44,10 +44,36 @@ class Login extends CI_Controller {
 				echo json_encode(array('msg'=>'Ups, Verifica los Datos Ingresados'));
 				exit;
 			}
-			echo json_encode(array('msg'=>'Éxito Ingresaste'));
+			//generamos los datos para sesión
+			$data = array(
+				'id' => $response->id,
+				'range' => $response->range,
+				'status' => $response->status,
+				'nombre_usuario' => $response->nombre_usuario,
+				'is_logged' => TRUE,
+			);
+			//Establecemos las sesiones
+			$this->session->set_userdata($data);
+			//establecemos un flash data
+			$this->session->set_flashdata('msg','Bienvenido'.$data['nombre_usuario']);
+			//generamos la ruta para direccionar
+			echo json_encode(array('url'=>base_url('dashboard')));
 		}
-
-
 	}
-
+	public function logout()
+	{
+		//generamos los datos para sesión
+		$data = array(
+			'id',
+			'range',
+			'status',
+			'nombre_usuario',
+			'is_logged',
+		);
+		//limpiamos las sesiones
+		$this->session->unset_userdata($data);
+		//destroy de la sesiones
+		$this->session->sess_destroy();
+		redirect('login');
+	}
 }

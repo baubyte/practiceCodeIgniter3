@@ -1,8 +1,11 @@
 (function($) {
 	//Cuando se ejecute el evento submit
 	$("#form-login").submit(function(event) {
-		//Anulamos el evento por default
-		event.preventDefault();
+		//dejamos el alert en blanco
+		$("#alert").html("");
+		//removemos las clases de invalid
+		$("#email > input").removeClass('is-invalid');
+		$("#password > input").removeClass('is-invalid');
 		//Función Ajax
 		$.ajax({
 			url: 'login/signin',
@@ -10,17 +13,15 @@
 			data: $(this).serialize(),
 			success:function(data) {
 				let json = JSON.parse(data);
+				//redireccionamos
+				window.location.replace(json.url);
 
 			},
-			error:function(xhr) {
-				if (xhr.status == 400) {
-					//removemos las clases de invalid
-					$("#email > input").removeClass('is-invalid');
-					$("#password > input").removeClass('is-invalid');
+			statusCode:{
+				400: function (xhr) {
 					let json = JSON.parse(xhr.responseText);
 					//Verificamos si hay datos de error para el email
 					if (json.email.length != 0){
-
 						$("#email > span").html(json.email);
 						//cambiamos la clase al input
 						$("#email > input").addClass('is-invalid');
@@ -31,12 +32,15 @@
 						//cambiamos la clase al input
 						$("#password > input").addClass('is-invalid');
 					}
-				}else if (xhr.status == 401) {
+				},
+				401: function (xhr) {
 					let json = JSON.parse(xhr.responseText);
-					console.log(json);
-				}
+					$("#alert").html('<div class="alert alert-danger" role="alert">'+ json.msg +'</div>');
+					//console.log(json);
+				},
 			},
-		})
-
+		});
+		//Anulamos el evento por default
+		event.preventDefault();
 	});
 })(jQuery)
