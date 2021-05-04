@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User extends CI_Controller {
+class User extends MY_Controller {
 	
 	public function __construct()
 	{
@@ -10,6 +10,7 @@ class User extends CI_Controller {
 
 	public function create()
 	{
-		$this->load->view('admin/create_user',TRUE);
+		$vista = $this->load->view('admin/create_user','',TRUE);
+		$this->pageConstruct($vista);
 	}
 }

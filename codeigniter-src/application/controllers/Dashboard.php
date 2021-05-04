@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+class Dashboard extends MY_Controller {
 	
 	public function __construct()
 	{
@@ -12,22 +12,11 @@ class Dashboard extends CI_Controller {
 	{
 		if ($this->session->userdata('is_logged')) {
 			$vista = $this->load->view('admin/show_users','',TRUE);
-            $this->getTemplate($vista);
+            $this->pageConstruct($vista);
 		}else {
 			show_404();
 		}
 
 	}
-	public function getTemplate($view){
-        $data = array(
-            'header' => $this->load->view('layout/header','',TRUE),
-            'nav' => $this->load->view('layout/nav','',TRUE),
-            'aside' => $this->load->view('layout/aside','',TRUE),
-            'content' => $view,
-            'footer' => $this->load->view('layout/footer','',TRUE),
-        );
-
-        $this->load->view('dashboard',$data);
-    }
 
 }
