@@ -1,5 +1,5 @@
 <?php
-class User extends CI_Model{
+class UserModel extends CI_Model{
 	
 	public function __construct()
 	{
@@ -7,7 +7,7 @@ class User extends CI_Model{
 		$this->load->database();
 	}
 
-	public function create($data)
+	public function create(Array $data)
 	{
 		$data =  [
 			'nombre_usuario' => $data['nombre_usuario'],
@@ -19,5 +19,9 @@ class User extends CI_Model{
 			return true;
 		}
 		return false;
+	}
+	public function store(Array $user = null, Array $userInfo = null)
+	{
+		# code...
 	}
 }
