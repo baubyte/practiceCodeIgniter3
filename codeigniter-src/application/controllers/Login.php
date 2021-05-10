@@ -6,8 +6,8 @@ class Login extends MY_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('User');
-		$this->load->model('Auth');
+		$this->load->model('UserModel');
+		$this->load->model('AuthModel');
 		$this->load->library(array('form_validation'));
 		$this->load->helper(['auth/login_rules']);
 	}
@@ -38,7 +38,7 @@ class Login extends MY_Controller {
 			//Devolvemos los errores en JSON
 			echo json_encode($errors);
 		}else {
-			if(!$response = $this->Auth->signin($email,$password)){
+			if(!$response = $this->AuthModel->signin($email,$password)){
 				//Código de error del header
 				$this->output->set_status_header(401);
 				echo json_encode(array('msg'=>'Ups, Verifica los Datos Ingresados'));

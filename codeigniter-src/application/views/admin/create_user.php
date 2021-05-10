@@ -5,20 +5,20 @@
         <div class="form-row">
         		<div class="col-7">
         			<label for="">Nombre Usuario</label>
-        			<input type="text" name="user" class="form-control" placeholder="Inserte nombre de usuario" value="<?= set_value('user') ?>">
-					<div class="text-danger"><?= form_error('user') ?></div>
+        			<input type="text" name="nombre_usuario" class="form-control" placeholder="Inserte nombre de usuario" value="<?= set_value('nombre_usuario') ?>">
+					<div class="text-danger"><?= form_error('nombre_usuario') ?></div>
         		</div>
         		<div class="col">
-        			<label for="">Correo</label>
-        			<input type="text" name="correo" class="form-control" placeholder="correo@mail.com" value="<?= set_value('correo') ?>">
-					<div class="text-danger"><?= form_error('correo') ?></div>
+        			<label for="">Email</label>
+        			<input type="text" name="email" class="form-control" placeholder="email@mail.com" value="<?= set_value('email') ?>">
+					<div class="text-danger"><?= form_error('email') ?></div>
         		</div>
         		<div class="col">
         			<label for="">Rango de Usuario</label>
         			<select name="range" class="custom-select">
         				<option selected value="">Seleccione el rango</option>
-        				<option <?= set_value('range') == 'admin' ? 'selected' : ''; ?> value="admin">Administrador</option>
-        				<option <?= set_value('range') == 'user' ? 'selected' : ''; ?> value="user">Usuario</option>
+        				<option <?= set_value('range') == '2' ? 'selected' : ''; ?> value="2">Administrador</option>
+        				<option <?= set_value('range') == '1' ? 'selected' : ''; ?> value="1">Usuario</option>
         			</select>
 					<div class="text-danger"><?= form_error('range') ?></div>
         		</div>
@@ -29,21 +29,21 @@
         	<div class="form-row">
         		<div class="col-7">
         			<label for="">Nombre(s)</label>
-        			<input name="name" class="form-control" type="text" placeholder="Inserte su nombre" value="<?= set_value('name') ?>">
-					<div class="text-danger"><?= form_error('name') ?></div>
+        			<input name="nombre" class="form-control" type="text" placeholder="Inserte su nombre" value="<?= set_value('nombre') ?>">
+					<div class="text-danger"><?= form_error('nombre') ?></div>
         		</div>
         		<div class="col">
         			<label for="">Apellidos</label>
-        			<input name="lastname" class="form-control" type="text" placeholder="Inserten sus apellidos" value="<?= set_value('lastname') ?>">
-					<div class="text-danger"><?= form_error('lastname') ?></div>
+        			<input name="apellido" class="form-control" type="text" placeholder="Inserten sus apellidos" value="<?= set_value('apellido') ?>">
+					<div class="text-danger"><?= form_error('apellido') ?></div>
         		</div>
         		<div class="col">
         			<label for="">Area</label>
         			<select name="area" class="custom-select">
         				<option selected value="">Seleccione el Area</option>
         				<option <?= set_value('area') == 'Medicina general' ? 'selected' : ''; ?> value="Medicina general">Medicina general</option>
-        				<option <?= set_value('area') == 'Genetica' ? 'selected' : ''; ?> value="Genetica">Genetica</option>
-        				<option <?= set_value('area') == 'Clinica del higado' ? 'selected' : ''; ?> value="Clinica del higado">Clinica del higado</option>
+        				<option <?= set_value('area') == 'Genetica' ? 'selected' : ''; ?> value="Genetica">Genética</option>
+        				<option <?= set_value('area') == 'Clinica del higado' ? 'selected' : ''; ?> value="Clinica del higado">Clínica del hígado</option>
         			</select>
 					<div class="text-danger"><?= form_error('area') ?></div>
         		</div>
