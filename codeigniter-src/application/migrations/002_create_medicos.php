@@ -50,7 +50,8 @@ class Migration_create_medicos extends CI_Migration
 				'constraint' => '1',
 				'null' => FALSE,
 			),
-			'CONSTRAINT `usuario_id` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT'
+			//Relaciones 
+			'CONSTRAINT usuario_id FOREIGN KEY (usuario_id) REFERENCES usuarios (id) ON DELETE RESTRICT ON UPDATE RESTRICT'
 		));
 		//Clave Primaria
 		$this->dbforge->add_key('id', TRUE);
