@@ -46,4 +46,13 @@ class UserModel extends CI_Model{
 		//Si la transacción esta todo bien
 		return !$this->db->trans_status() ? false : true;
 	}
+
+	public function getUsers(){
+        $query = $this->db->order_by('id','DESC')->get('usuarios'); 
+        return $query->result();
+    }
+	public function getPaginate($limit,$offset){
+        $query = $this->db->order_by('id','DESC')->get('usuarios',$limit,$offset);
+        return $query->result();
+    }
 }
