@@ -56,6 +56,7 @@ class User extends MY_Controller {
 				//Código de error del header
                 $this->output->set_status_header(500);
             }else{
+				$this->sendEmail($userData);
 				$this->session->set_flashdata('msg','El usuario a sido registrado'); 
                 redirect(base_url('user'));
             }
@@ -64,5 +65,22 @@ class User extends MY_Controller {
 		//
 		$vista = $this->load->view('admin/create_user','',TRUE);
         $this->pageConstruct($vista); 
+	}
+
+	public function sendEmail(Array $data)
+	{
+		
+		//De donde se enviá
+        $this->email->from('baubyte@baubyte.com', 'BAUBYTE');
+		//A Donde va
+        $this->email->to($data['email']);
+		//Asunto
+        $this->email->subject('Datos de tu Cuenta');
+		//Vista del Template del Email
+        $vista = $this->load->view('emails/welcome',$data,TRUE);
+		//Seteamos el Mensaje
+        $this->email->message($vista);
+		//Enviá el email
+        $this->email->send();
 	}
 }
