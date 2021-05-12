@@ -14,9 +14,6 @@
  	<div class="sidebar-sticky" style="margin-top: 1em;">
  		<!-- FLASHDATA -->
  		<?php if ($dat = $this->session->flashdata('msg')) : ?>
- 			<div class="alert alert-primary" role="alert">
- 				<?= $dat ?>
- 			</div>
  		<?php endif; ?>
  		<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
  			<a href="<?=base_url('user') ?>" class="nav-link <?= $this->uri->segment(2) == '' || $this->uri->segment(1) == 'user' &&  $this->uri->segment(2) == 'index' ? 'active' : ''; ?>">Usuarios</a>
