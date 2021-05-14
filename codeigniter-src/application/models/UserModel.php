@@ -55,4 +55,28 @@ class UserModel extends CI_Model{
         $query = $this->db->order_by('id','DESC')->get('usuarios',$limit,$offset);
         return $query->result();
     }
+	public function getUser($id){
+        // SELECT *
+        // FROM usuarios 
+        // JOIN medicos 
+        //     ON usuarios.id = medicos.usuario_id
+        // WHERE usuarios.id = $id LIMIT 1
+        $this->db->join('medicos','usuarios.id = medicos.usuario_id');
+        $user = $this->db->get_where('usuarios',array('usuarios.id' => $id),1);
+        return $user->row_array();
+    }
+
+	public function updateUser($id,$data){
+        $this->db->where('id',$id);
+        $this->db->update('medicos',$data);
+    }
+
+	public function deleteUser($id){
+		
+        $this->db->where('usuario_id',$id);
+        $this->db->delete('medicos');
+		$this->db->where('id',$id);
+        $this->db->delete('usuarios');
+
+    }
 }

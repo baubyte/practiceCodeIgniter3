@@ -11,8 +11,7 @@ class Dashboard extends MY_Controller {
 	public function index()
 	{
 		if ($this->session->userdata('is_logged')) {
-			$vista = $this->load->view('admin/show_users','',TRUE);
-            $this->pageConstruct($vista);
+			redirect('user');
 		}else {
 			show_404();
 		}
