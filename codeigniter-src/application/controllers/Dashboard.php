@@ -11,7 +11,7 @@ class Dashboard extends MY_Controller {
 	public function index()
 	{
 		if ($this->session->userdata('is_logged')) {
-			redirect('user');
+			redirect('usuarios');
 		}else {
 			show_404();
 		}

@@ -7,7 +7,7 @@
 
 <div class="container-fluid">
     <h4>Datos de la cuenta</h4>
-    <form method="POST" action="<?= base_url('user/update') ?>">
+    <form method="POST" action="<?= base_url('usuario/actualizar') ?>">
     <div class="card">
         <div class="card-body">
             <div class="form-row">

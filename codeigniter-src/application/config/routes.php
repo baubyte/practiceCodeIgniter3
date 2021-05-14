@@ -52,3 +52,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+//Rutas Personalizadas
+
+/**Rutas CRUD Usuarios */
+$route['usuarios']['GET'] = 'user'; //Nombre y a que controlador hace referencia
+
+$route['usuarios/listar']['GET'] = 'user/index';
+
+$route['usuarios/listar/(:num)']['GET'] = 'user/index/$1';
+
+$route['user'] = 'none'; //desactivamos la ruta
+
+$route['usuario/nuevo'] = 'user/create';
+
+$route['user/edit/(:num)'] = 'none'; //desactivamos la ruta
+
+$route['usuario/editar/(:num)']['GET'] = 'user/edit/$1';
+
+$route['usuario/actualizar']['POST'] = 'user/update';
+
+$route['usuario/eliminar']['POST'] = 'user/delete';
+
+$route['usuario/guardar']['POST'] = 'user/store';
+

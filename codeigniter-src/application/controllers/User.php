@@ -16,7 +16,7 @@ class User extends MY_Controller
 	{
 		$users = $this->UserModel->getUsers();
 		//Configuración
-		$config['base_url'] = base_url('user/index');
+		$config['base_url'] = base_url('usuarios/listar');
 		//Registro por pagina
 		$config['per_page'] = 2;
 		//Total de registros
@@ -93,7 +93,7 @@ class User extends MY_Controller
 			} else {
 				$this->sendEmail($userData);
 				$this->session->set_flashdata('msg', 'El usuario a sido registrado');
-				redirect(base_url('user'));
+				redirect(base_url('usuarios'));
 			}
 		}
 		//
@@ -127,7 +127,7 @@ class User extends MY_Controller
 	public function update()
 	{
 		//Para poder Acceder solo por Post
-		if ($this->input->server('REQUEST_METHOD') === 'POST') {
+		//if ($this->input->server('REQUEST_METHOD') === 'POST') {
 			//Recibimos los datos del formulario
 			$id = $this->input->post('id');
 			$nombre = $this->input->post('nombre');
@@ -155,11 +155,11 @@ class User extends MY_Controller
 				);
 				$this->UserModel->updateUser($id, $data);
 				$this->session->set_flashdata('msg', 'El usuario ' . $nombreUsuario . ' fue Actualizado Correctamente');
-				redirect('user');
+				redirect('usuarios');
 			}
-		}else{
-			show_404();
-		}
+		//}else{
+		//	show_404();
+		//}
 	}
 	public function delete()
 	{

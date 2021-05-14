@@ -16,8 +16,8 @@
  		<?php if ($dat = $this->session->flashdata('msg')) : ?>
  		<?php endif; ?>
  		<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
- 			<a href="<?=base_url('user') ?>" class="nav-link <?= $this->uri->segment(2) == '' || $this->uri->segment(1) == 'user' &&  $this->uri->segment(2) == 'index' ? 'active' : ''; ?>">Usuarios</a>
- 			<a href="<?=base_url('user/create') ?>" class="nav-link <?= $this->uri->segment(2) == 'create' || $this->uri->segment(2) == 'store' ? 'active' : ''; ?>">Alta Usuario</a>
+ 			<a href="<?=base_url('usuarios') ?>" class="nav-link <?= $this->uri->segment(2) == '' || $this->uri->segment(1) == 'usuarios' &&  $this->uri->segment(2) == 'listar' ? 'active' : ''; ?>">Usuarios</a>
+ 			<a href="<?=base_url('usuario/nuevo') ?>" class="nav-link <?= $this->uri->segment(2) == 'nuevo' || $this->uri->segment(2) == 'guardar' ? 'active' : ''; ?>">Alta Usuario</a>
  		</div>
  	</div>
  </nav>

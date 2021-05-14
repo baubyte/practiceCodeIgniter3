@@ -18,7 +18,7 @@
               // ajax ....  
               $.ajax({
                 type: 'POST',
-                url: '/user/delete',
+                url: '/usuario/eliminar',
                 data: {'id':id},
                 success: function(){
                   $(self).parents('tr').remove();

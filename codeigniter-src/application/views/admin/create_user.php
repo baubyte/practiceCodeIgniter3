@@ -1,4 +1,4 @@
-<form action="<?= base_url('user/store') ?>" method="POST">
+<form action="<?= base_url('usuario/guardar') ?>" method="POST">
 	<h3>Datos de la Cuenta</h3>
 	<hr>
 	<div class="form-group">

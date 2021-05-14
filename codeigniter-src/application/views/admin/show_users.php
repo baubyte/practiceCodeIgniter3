@@ -24,7 +24,7 @@
       <td><?= $user->status == 1 ? 'Activo' : 'Inactivo' ?></td>
       <td><?= $user->range == 1 ? 'Usuario' : 'Administrador' ?></td>
       <td>
-          <a class="btn btn-warning" href="<?=base_url('user/edit/'.$user->id)?>" role="button">Editar</a> | <a class="btn btn-danger" href="#" data-id="<?=$user->id?>" id="delete" role="button">Eliminar</a>
+          <a class="btn btn-warning" href="<?=base_url('usuario/editar/'.$user->id)?>" role="button">Editar</a> | <a class="btn btn-danger" href="#" data-id="<?=$user->id?>" id="delete" role="button">Eliminar</a>
       </td>
     </tr>
     <?php endforeach; ?>
